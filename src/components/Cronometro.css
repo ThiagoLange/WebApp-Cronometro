@@ -1,0 +1,85 @@
+.cronometro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px; /* Aumentado o espaçamento */
+  margin-top: 30px;
+  padding: 30px; /* Aumentado o padding */
+  border: 1px solid #444; /* Ajustado para tema escuro */
+  border-radius: 10px; /* Bordas mais arredondadas */
+  background-color: #2f2f2f; /* Fundo um pouco mais claro que o principal do tema escuro */
+  color: rgba(255, 255, 255, 0.87); /* Cor de texto padrão do tema escuro */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  min-width: 300px; /* Largura mínima */
+}
+
+.time-display {
+  font-size: 3.5em; /* Tamanho da fonte aumentado */
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace; /* Fonte monoespaçada moderna */
+  padding: 15px 25px; /* Padding aumentado */
+  border: 1px solid #555; /* Ajustado para tema escuro */
+  border-radius: 6px; /* Bordas mais arredondadas */
+  background-color: #1e1e1e; /* Fundo escuro para o display */
+  color: #00d9ff; /* Cor ciano vibrante para o tempo */
+  min-width: 200px;
+  text-align: center;
+  letter-spacing: 2px; /* Espaçamento entre caracteres */
+}
+
+.buttons {
+  display: flex;
+  gap: 15px; /* Espaçamento entre botões aumentado */
+}
+
+.buttons button {
+  padding: 12px 24px; /* Padding aumentado */
+  font-size: 1.1em; /* Tamanho da fonte aumentado */
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px; /* Bordas mais arredondadas */
+  color: white;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.buttons button:nth-child(1) { /* Botão Iniciar/Continuar/Pausar */
+  background-color: #007bff; /* Azul primário */
+}
+.buttons button:nth-child(1):hover {
+  background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+.buttons button:nth-child(2) { /* Botão Zerar */
+  background-color: #dc3545; /* Vermelho para Zerar */
+}
+.buttons button:nth-child(2):hover {
+  background-color: #c82333; /* Vermelho mais escuro no hover */
+}
+
+.buttons button:active {
+  transform: scale(0.98); /* Efeito de clique */
+}
+
+.buttons button:disabled {
+  background-color: #6c757d; /* Cinza para desabilitado */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Ajustes para o tema claro, se necessário (herda de index.css) */
+@media (prefers-color-scheme: light) {
+  .cronometro-container {
+    background-color: #f8f9fa; /* Fundo claro */
+    border: 1px solid #dee2e6;
+    color: #212529; /* Texto escuro */
+  }
+  .time-display {
+    background-color: #ffffff; /* Fundo branco para o display */
+    border: 1px solid #ced4da;
+    color: #007bff; /* Azul para o tempo no tema claro */
+  }
+  
+  .buttons button:disabled {
+    background-color: #adb5bd;
+  }
+}

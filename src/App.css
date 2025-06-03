@@ -1,42 +1,30 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/App.css */
+.App {
+  display: flex;
+  flex-direction: column; /* Empilha os filhos verticalmente (header, main) */
+  align-items: center;   /* Centraliza os filhos horizontalmente */
+  justify-content: center; /* Centraliza o conteúdo verticalmente na viewport */
+  min-height: 90vh;      /* Usa pelo menos 90% da altura da viewport para dar espaço para centralização vertical */
+  padding: 20px;         /* Adiciona um respiro em volta */
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App-header {
+  margin-bottom: 2rem; /* Espaço abaixo do título */
+  text-align: center;  /* Garante que o texto do h1 (se for multilinhas) esteja centralizado */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header h1 {
+  margin: 0; /* Remove margens padrão do h1 para melhor controle */
+  font-size: 2.8em; /* Ajuste o tamanho conforme preferência */
+  /* A cor será herdada de :root ou @media (prefers-color-scheme: light) do index.css */
+  /* Exemplo de cor específica, se desejado (descomente e ajuste): */
+  /* color: #61dafb; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* O componente Cronometro dentro de <main> será centralizado pelo align-items: center do .App */
+main {
+  display: flex; /* Permite que o cronômetro (se for o único filho) também possa ser alinhado/justificado se necessário */
+  justify-content: center;
+  align-items: center;
 }
