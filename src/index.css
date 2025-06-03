@@ -25,7 +25,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* Alterado de place-items: center; para ser mais explícito para flexbox */
+  justify-content: center; /* Centraliza horizontalmente o filho direto (#root) */
+  align-items: center;    /* Centraliza verticalmente o filho direto (#root) */
   min-width: 320px;
   min-height: 100vh;
 }
