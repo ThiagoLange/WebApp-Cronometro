@@ -1,5 +1,5 @@
 import Cronometro from './components/Cronometro';
-import './App.css'; // Você pode manter ou limpar este arquivo
+import './App.css';
 
 function App() {
   return (
@@ -10,6 +10,9 @@ function App() {
       <main>
         <Cronometro />
       </main>
+      <footer className="App-footer">
+        <p>&copy; 2025 Thiago. Feito com React e TypeScript.</p>
+      </footer>
     </div>
   );
 }

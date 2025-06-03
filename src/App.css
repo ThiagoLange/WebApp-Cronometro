@@ -1,12 +1,13 @@
 /* src/App.css */
 .App {
   display: flex;
-  flex-direction: column; /* Empilha os filhos verticalmente (header, main) */
+  flex-direction: column; /* Empilha os filhos verticalmente (header, main, footer) */
   align-items: center;   /* Centraliza os filhos horizontalmente */
-  justify-content: center; /* Centraliza o conteúdo verticalmente na viewport */
-  min-height: 90vh;      /* Usa pelo menos 90% da altura da viewport para dar espaço para centralização vertical */
+  /* justify-content: center; */ /* Removido/Comentado para permitir que flex-grow em main funcione melhor */
+  min-height: 90vh;      /* Usa pelo menos 90% da altura da viewport */
   padding: 20px;         /* Adiciona um respiro em volta */
   box-sizing: border-box;
+  /* position: relative; */ /* Removido, flex-grow em main é uma abordagem melhor para o footer */
 }
 
 .App-header {
@@ -22,9 +23,26 @@
   /* color: #61dafb; */
 }
 
-/* O componente Cronometro dentro de <main> será centralizado pelo align-items: center do .App */
 main {
-  display: flex; /* Permite que o cronômetro (se for o único filho) também possa ser alinhado/justificado se necessário */
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1; /* Faz o main ocupar o espaço vertical disponível, empurrando o footer para baixo */
+}
+
+.App-footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem; /* Espaço acima do footer */
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6); /* Cor mais suave para o texto do footer no tema escuro */
+  /* border-top: 1px solid #444; /* Linha sutil acima do footer, opcional */
+}
+
+@media (prefers-color-scheme: light) {
+  .App-footer {
+    color: #555; /* Cor para o texto do footer no tema claro */
+    /* border-top: 1px solid #ddd; /* Linha sutil para tema claro, opcional */
+  }
 }
